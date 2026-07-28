@@ -17,6 +17,14 @@ Route::middleware('auth')->group(function (): void {
         ->name('contacts.index');
     Route::post('/contacts', [ContactController::class, 'store'])
         ->name('contacts.store');
+    Route::get('/contacts/{contact}/edit', [ContactController::class, 'edit'])
+        ->name('contacts.edit');
+    Route::patch('/contacts/{contact}', [ContactController::class, 'update'])
+        ->name('contacts.update');
+    Route::get('/contacts/{contact}/delete', [ContactController::class, 'delete'])
+        ->name('contacts.delete');
+    Route::delete('/contacts/{contact}', [ContactController::class, 'destroy'])
+        ->name('contacts.destroy');
 
     Route::get('/profile', [ProfileController::class, 'edit'])
         ->name('profile.edit');

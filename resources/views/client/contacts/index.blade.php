@@ -69,6 +69,15 @@
                         @if ($contact->email)
                             <p class="mt-1 text-sm text-zinc-600">Email: {{ $contact->email }}</p>
                         @endif
+
+                        <div class="mt-4 flex gap-3">
+                            <a href="{{ route('contacts.edit', $contact) }}" class="text-sm font-medium text-sky-700 hover:text-sky-900">
+                                Edit
+                            </a>
+                            <a href="{{ route('contacts.delete', $contact) }}" class="text-sm font-medium text-red-700 hover:text-red-900">
+                                Delete
+                            </a>
+                        </div>
                     </div>
                 </div>
             @empty
